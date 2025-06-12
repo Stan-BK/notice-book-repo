@@ -1,0 +1,6 @@
+[submodule "notice-book"]
+	path = notice-book
+	url = git@github.com:Stan-BK/notice-book.git
+[submodule "notice"]
+	path = notice
+	url = git@github.com:Stan-BK/notice.git
