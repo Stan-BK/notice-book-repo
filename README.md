@@ -50,4 +50,4 @@ VITE_SUBSCRIPTION_PATH=‘{your notice service's hostname}/worker’
 
 <img width="512" alt="image" src="https://github.com/user-attachments/assets/c9fd6b25-3a3a-41e0-a48b-2bb9d07bc198" />
 
-All is done👏。Making ur nearly day plan and enable notification!
+All is done👏. Making ur nearly day plan and enable notification!
