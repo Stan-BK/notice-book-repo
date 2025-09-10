@@ -8,31 +8,31 @@ Base on [`Push` API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) 
 
 > This repo is composition of `Notice-Book` application. 
 
-<img width="1024" alt="Snipaste_2025-08-01_11-43-26" src="https://github.com/user-attachments/assets/56da9f49-a3b7-4fad-b8bf-1d22238cd48b" />
+<img width="1024" alt="image" src="https://github.com/user-attachments/assets/4ead95ed-ffd7-4889-abde-dd832ff446bf" />
 
-## notice
+### deployment
+U can deploy by shell or manually
+
+## manually
+### notice
 Application's server that base on `Cloudflare Worker` service. 
-### configuration
+
 1. Login `Cloudflare` dashboard to Deploy this repo as `Cloudflare Worker`.
 
 2. Self host route is needed and remained like '{your hostname}/worker/*':
 <img width="512" alt="WechatIMG6" src="https://github.com/user-attachments/assets/6af971b4-9904-4cf5-9b2b-0a7dad01f515" />
 
 3. Create a KV namespace and setted as `Notice-Book`:
-<img width="512" alt="image" src="https://github.com/user-attachments/assets/2a7cf12e-5c0a-4600-9566-9d6dbadd5085" />
+<img width="512" alt="image" src="https://github.com/user-attachments/assets/c0f3db7f-fcf9-4733-a2d8-5c4ae17c3a56" />
 
-4. Bindging KV namespace to worker:
+5. Bindging KV namespace to worker:
 <img width="512" alt="image" src="https://github.com/user-attachments/assets/d3d9846c-98c5-4708-a67a-618bd3cb9577" />
-
 
 It‘s done😆. Now U can move to easily deploy frontend of `Notice-Book` app, cron trigger is automatically enabled for handling notices updating and pushing.
 
-## notice-book
-Application's frontend that deploys on any static-site-host service providers.
+### notice-book
+Application's frontend that deploys on `Cloudflare Pages`.
 > Make sure this repo is deploying on the same site of `notice` service.
-
-### configuration
-Thats a example of `Cloudflare Pages`:
 
 1. Deploy as static site with build command and dedicate deployment directory:
 ```
@@ -44,10 +44,10 @@ Build output:
 
 2. Binding env variable like:
 ```
-VITE_SUBSCRIPTION_PATH=‘{your notice service's hostname}/worker’
+SUBSCRIPTION_PATH=‘[your service's domain]/worker’
 ```
 `Cloudflare Pages` has a user-friendly settings window:
 
-<img width="512" alt="image" src="https://github.com/user-attachments/assets/c9fd6b25-3a3a-41e0-a48b-2bb9d07bc198" />
+<img width="512" height="170" alt="image" src="https://github.com/user-attachments/assets/7d1bfe74-d174-4ee8-8f31-6d2c1b9b1355" />
 
 All is done👏. Making ur nearly day plan and enable notification!
