@@ -11,9 +11,35 @@ Base on [`Push` API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) 
 <img width="1024" alt="image" src="https://github.com/user-attachments/assets/4ead95ed-ffd7-4889-abde-dd832ff446bf" />
 
 ### deployment
-U can deploy by shell or manually
+U can deploy automatically or manually
 
-## manually
+## Auto Deploy with .env Configuration
+
+1. Copy the example environment file:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edit `.env` file and fill in your configuration:
+   ```bash
+   # Your domain (e.g., https://www.example.com)
+   YOUR_DOMAIN=https://www.example.com
+   
+   # Your Cloudflare KV namespace ID
+   # You need to create kv namespace in Cloudflare and keep its name as `Notice-Book`
+   YOUR_KV_NAMESPACE_ID=your_kv_namespace_id_here
+   ```
+
+3. Run the deployment script:
+   ```bash
+   pnpm run deploy
+   ```
+
+The script will automatically read your configuration from `.env` file and deploy both frontend and backend.
+
+If you haven't configured the `.env` file, the script will prompt you to enter the configuration interactively.
+
+## Manually
 ### notice
 Application's server that base on `Cloudflare Worker` service. 
 
