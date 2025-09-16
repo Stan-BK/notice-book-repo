@@ -56,6 +56,7 @@ const config = {
     ? `${$1.trim()}.${$2.trim()}`
     : "",
   your_kv_namespace_id: process.env.YOUR_KV_NAMESPACE_ID || "",
+  your_notice_time_range: JSON.parse(process.env.YOUR_NOTICE_TIME_RANGE || "[360000, 4800000]"),
 };
 //#endregion
 
@@ -142,7 +143,7 @@ async function overwriteConfigFiles() {
   await writeFile("./notice/wrangler.toml", noticeConfRes);
   await writeFile("./notice-book/wrangler.toml", noticeBookConfRes);
 
-  execDeployJobs();
+  // execDeployJobs();
 
   // Delete temporary config files
   execSync("rm ./notice/wrangler.toml ./notice-book/wrangler.toml", {
