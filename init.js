@@ -143,7 +143,7 @@ async function overwriteConfigFiles() {
   await writeFile("./notice/wrangler.toml", noticeConfRes);
   await writeFile("./notice-book/wrangler.toml", noticeBookConfRes);
 
-  // execDeployJobs();
+  execDeployJobs();
 
   // Delete temporary config files
   execSync("rm ./notice/wrangler.toml ./notice-book/wrangler.toml", {
