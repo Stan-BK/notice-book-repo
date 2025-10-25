@@ -146,7 +146,7 @@ async function overwriteConfigFiles() {
   execDeployJobs();
 
   // Delete temporary config files
-  execSync("rm ./notice/wrangler.toml ./notice-book/wrangler.toml", {
+  execSync("npx rimraf ./notice/wrangler.toml ./notice-book/wrangler.toml", {
     stdio: "inherit",
   });
 
