@@ -149,6 +149,9 @@ async function overwriteConfigFiles() {
   execSync("npx rimraf ./notice/wrangler.toml ./notice-book/wrangler.toml", {
     stdio: "inherit",
   });
+  
+  // 确保脚本执行完毕后退出
+  process.exit(0);
 
   function replace(conf) {
     return conf.replace(/\[(your_.*?)\]/g, function (_, key) {
