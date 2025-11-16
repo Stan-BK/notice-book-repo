@@ -4,7 +4,7 @@
 
 # notice-book-repo
 `Notice-Book` is a reminding application focus on nearly three day and perform as PWA. 
-Base on [`Push` API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and a couple of Cloudflare services like `Worker`, `Pages`(optional),`KV`. Feel free to deploy this app by following guidances.
+Base on [`Push` API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and a couple of Cloudflare services like `Worker`, `Pages`, `KV`. Feel free to deploy this app by following guidances.
 
 > This repo is composition of `Notice-Book` application. 
 
@@ -45,16 +45,19 @@ Application's server that base on `Cloudflare Worker` service.
 
 1. Login `Cloudflare` dashboard to Deploy this repo as `Cloudflare Worker`.
 
-2. Self host route is needed and remained like '{your hostname}/worker/*':
+2. Self host route is needed and remained like `{your hostname}/worker/*`:
 <img width="512" alt="WechatIMG6" src="https://github.com/user-attachments/assets/6af971b4-9904-4cf5-9b2b-0a7dad01f515" />
 
 3. Create a KV namespace and setted as `Notice-Book`:
 <img width="512" alt="image" src="https://github.com/user-attachments/assets/c0f3db7f-fcf9-4733-a2d8-5c4ae17c3a56" />
 
-5. Bindging KV namespace to worker:
+4. Bindging KV namespace to worker:
 <img width="512" alt="image" src="https://github.com/user-attachments/assets/d3d9846c-98c5-4708-a67a-618bd3cb9577" />
 
-It‘s done😆. Now U can move to easily deploy frontend of `Notice-Book` app, cron trigger is automatically enabled for handling notices updating and pushing.
+5. Define environment variables of href (`{your hostname}/worker`) and time range (an available working time range for cloudflare's free plan user, maximum is 8 hour): 
+<img width="512" alt="image" src="https://github.com/user-attachments/assets/e7ca761a-675f-4b7b-95bb-e7ae8813a8eb" />
+
+It‘s done😆. Now U can move to easily deploy frontend of `Notice-Book` app, cron trigger is automatically enabled for handling notices updating and pushing (better set .
 
 ### notice-book
 Application's frontend that deploys on `Cloudflare Pages`.
@@ -70,7 +73,7 @@ Build output:
 
 2. Binding env variable like:
 ```
-SUBSCRIPTION_PATH=‘[your service's domain]/worker’
+SUBSCRIPTION_PATH={your service's domain}/worker
 ```
 `Cloudflare Pages` has a user-friendly settings window:
 
