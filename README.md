@@ -11,7 +11,7 @@ Base on [`Push` API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) 
 <img width="1024" alt="image" src="https://github.com/user-attachments/assets/4ead95ed-ffd7-4889-abde-dd832ff446bf" />
 
 ### deployment
-U can deploy automatically or manually
+Fork this repo then u can deploy automatically or manually.
 
 ## Auto Deploy with .env Configuration
 
@@ -37,9 +37,9 @@ U can deploy automatically or manually
 
 The script will automatically read your configuration from `.env` file and deploy both frontend and backend.
 
-If you haven't configured the `.env` file, the script will prompt you to enter the configuration interactively.
+> If you haven't configured the `.env` file, the script will prompt you to enter the configuration interactively.
 
-## Manually
+## Manually Deploy
 ### notice
 Application's server that base on `Cloudflare Worker` service. 
 
